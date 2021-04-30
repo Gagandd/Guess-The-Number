@@ -1,0 +1,70 @@
+import java.util.*;
+class Game
+{
+    int inputnumber;
+    int randomNumber;
+    int count=0;
+    Game()
+    {
+         Random number = new Random();
+
+      randomNumber=number.nextInt(100); 
+     
+        
+    }
+
+
+    
+    
+   void inputNumber()
+    {
+        Scanner sc=new Scanner (System.in);
+        inputnumber=sc.nextInt();
+    }
+    
+    
+    boolean isCorrectNumber()
+    {
+        count++;
+        if(inputnumber==randomNumber)
+        {
+            System.out.println("Hurry!!! YES,you guess it right in "+count +" attempts");
+            return true;
+        }
+        else if(inputnumber>=randomNumber)
+        {
+            System.out.println("Number is Very High ");
+            
+            return false;
+            
+        }
+        else
+        {
+             System.out.println("Number is Very Low ");
+             return false;
+            
+        }
+    }
+    
+    
+    
+    
+}
+
+public class Main {
+    public static void main(String args[]) {
+        Game start=new Game();
+        
+        boolean ans=false;
+        while(!ans)
+        {
+            start.inputNumber();
+           ans= start.isCorrectNumber();
+         
+            
+            
+            
+        }
+     
+    }
+}
